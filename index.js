@@ -1,20 +1,17 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
-}
+  const seenNumbers = new Set();
+  // initializes an empty Set
+   for(const number of array) {
+     const complement = target - number;
+    //  .has should return true if the Set includes the complement
+    if(seenNumbers.has(complement)) return true;
 
-/* 
-  Write the Big O time complexity of your function here
-*/
+    // .add should add the number to the Set
+    seenNumbers.add(number);
+   }
+   return false;
+  }
 
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
-
-// You can run `node index.js` to view these console logs
 if (require.main === module) {
   // add your own custom tests in here
   console.log("Expecting: true");
